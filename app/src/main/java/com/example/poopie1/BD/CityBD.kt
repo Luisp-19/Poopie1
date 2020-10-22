@@ -1,18 +1,20 @@
 package com.example.poopie1.BD
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.poopie1.Cities.Cities
+import com.example.poopie1.dao.DaoSan
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(Cities::class), version = 4, exportSchema = false)
-public abstract class CityBD : RoomDatabase {
+@Database(entities = [Cities::class], version = 1, exportSchema = false)
+public abstract class CityBD : RoomDatabase() {
 
-    abstract fun cityDao(): CityDao
+    abstract fun daoSan(): DaoSan
 
     private class WordDatabaseCallback(
         private val scope: CoroutineScope
@@ -22,7 +24,7 @@ public abstract class CityBD : RoomDatabase {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    var cityDao = database.cityDao()
+                    var daoSan = database.daoSan()
                 }
             }
         }
@@ -30,10 +32,11 @@ public abstract class CityBD : RoomDatabase {
 
     companion object {
 
+        // Previne que varios instantes sejam abertos na databse ao mesmo tempo
         @Volatile
         private var INSTANCE: CityBD? = null
 
-        fun getDatabase( context: Context, scope: CoroutineScope): CityBD {
+        fun getDatabase(context: Context, scope: CoroutineScope): CityBD {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
