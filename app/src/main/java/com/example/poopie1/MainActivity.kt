@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
             citites?.let { adapter.setCities(it) }
         })
 
-        /*  val fab = findViewById<FloatingActionButton>(R.id.fab)
+          val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener{
             val intent = Intent(this@MainActivity, AddCities::class.java)
             startActivityForResult(intent, AddCitiesrq)
         }
-        */
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

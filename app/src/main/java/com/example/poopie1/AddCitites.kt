@@ -10,23 +10,23 @@ import androidx.appcompat.app.AppCompatActivity
 
 class AddCities : AppCompatActivity(){
 
-    private lateinit var editWordView: EditText
-    private lateinit var editnumberView: EditText
+    private lateinit var editCityView: EditText
+    private lateinit var editCountryView: EditText
 
     public override fun OnCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_cities)
-        editWordView = findViewById(R.id.edit1))
-        editnumberView = findViewById(R.id.edit2/))
+        editCityView = findViewById(R.id.edit1)
+        editCountryView = findViewById(R.id.edit2)
 
-        val button = findViewById<Button>(R.id./*adcionar id*/)
+        val button = findViewById<Button>(R.id.button1)
         button.setOnClickListener {
             val replyIntent = Intent()
-            if (TextUtils.isEmpty(editWordView.text)) {
+            if (TextUtils.isEmpty(editCountryView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
-                val edit1 = editWordView.text.toString()
-                val edit2 = editnumberView.text.toString()
+                val edit1 = editCityView.text.toString()
+                val edit2 = editCountryView.text.toString()
                 replyIntent.putExtra(EXTRA_REPLY, edit1)
                 replyIntent.putExtra(EXTRA1_REPLY, edit2)
                 setResult(Activity.RESULT_OK, replyIntent)

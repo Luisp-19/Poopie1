@@ -8,8 +8,8 @@
         android:id="@+id/edit1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_word"
-        android:autofillHints="@string/hint_word"
+        android:hint="@string/city_coiso"
+        android:autofillHints="@string/city_coiso"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
         android:textSize="18sp" />
@@ -18,8 +18,8 @@
         android:id="@+id/edit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_number"
-        android:autofillHints="@string/hint_number"
+        android:hint="@string/country_coiso"
+        android:autofillHints="@string/country_coiso"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
         android:textSize="18sp" />
@@ -29,5 +29,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
-        android:text="@string/button_save" />
+        android:text="@string/butao_cida_pais" />
 </LinearLayout>
