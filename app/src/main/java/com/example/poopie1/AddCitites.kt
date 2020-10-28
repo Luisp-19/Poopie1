@@ -22,13 +22,13 @@ class AddCities : AppCompatActivity(){
         val button = findViewById<Button>(R.id.button1)
         button.setOnClickListener {
             val replyIntent = Intent()
-            if (TextUtils.isEmpty(editCountryView.text)) {
+            if (TextUtils.isEmpty(editCityView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
-                val edit1 = editCityView.text.toString()
-                val edit2 = editCountryView.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, edit1)
-                replyIntent.putExtra(EXTRA1_REPLY, edit2)
+                val cityedit1 = editCityView.text.toString()
+                val countryedit2 = editCountryView.text.toString()
+                replyIntent.putExtra(EXTRA_REPLY, cityedit1)
+                replyIntent.putExtra(EXTRA1_REPLY, countryedit2)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
