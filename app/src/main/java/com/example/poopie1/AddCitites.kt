@@ -13,7 +13,7 @@ class AddCities : AppCompatActivity(){
     private lateinit var editCityView: EditText
     private lateinit var editCountryView: EditText
 
-    public override fun OnCreate(savedInstanceState: Bundle?) {
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_cities)
         editCityView = findViewById(R.id.edit1)
@@ -26,9 +26,9 @@ class AddCities : AppCompatActivity(){
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
                 val cityedit1 = editCityView.text.toString()
-                val countryedit2 = editCountryView.text.toString()
+                val countryedit1 = editCountryView.text.toString()
                 replyIntent.putExtra(EXTRA_REPLY, cityedit1)
-                replyIntent.putExtra(EXTRA1_REPLY, countryedit2)
+                replyIntent.putExtra(EXTRA1_REPLY, countryedit1)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
@@ -39,5 +39,4 @@ class AddCities : AppCompatActivity(){
         const val EXTRA_REPLY = "com.example.android.wordlistsql.REPLY"
         const val EXTRA1_REPLY = "com.example.android.wordlistsql.REPLY1"
     }
-
 }
