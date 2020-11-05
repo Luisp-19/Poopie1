@@ -5,14 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.poopie1.Cities.Cities
+import com.example.poopie1.Notas.Notas
 import com.example.poopie1.dao.DaoSan
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 
-@Database(entities = [Cities::class], version = 1, exportSchema = false)
-public abstract class CityBD : RoomDatabase() {
+@Database(entities = [Notas::class], version = 1, exportSchema = false)
+public abstract class NotasBD : RoomDatabase() {
 
     abstract fun daoSan(): DaoSan
 
@@ -34,9 +34,9 @@ public abstract class CityBD : RoomDatabase() {
 
         // Previne que varios instantes sejam abertos na databse ao mesmo tempo
         @Volatile
-        private var INSTANCE: CityBD? = null
+        private var INSTANCE: NotasBD? = null
 
-        fun getDatabase(context: Context, scope: CoroutineScope): CityBD {
+        fun getDatabase(context: Context, scope: CoroutineScope): NotasBD {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
@@ -44,8 +44,8 @@ public abstract class CityBD : RoomDatabase() {
             synchronized (this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    CityBD::class.java,
-                    "cities_database",
+                    NotasBD::class.java,
+                    "nota_database",
                 )
                      //Estrategia destruiçao
                     .addCallback(WordDatabaseCallback(scope))
@@ -56,5 +56,4 @@ public abstract class CityBD : RoomDatabase() {
             }
         }
     }
-
 }

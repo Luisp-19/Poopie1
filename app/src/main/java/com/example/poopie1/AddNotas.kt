@@ -8,31 +8,31 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-class AddCities : AppCompatActivity(){
+class AddNotas : AppCompatActivity(){
 
-    private lateinit var editCityView: EditText
-    private lateinit var editCountryView: EditText
+    private lateinit var editNotaView: EditText
+    private lateinit var editSubnotaView: EditText
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.add_cities)
-        editCityView = findViewById(R.id.edit1)
-        editCountryView = findViewById(R.id.edit2)
+        setContentView(R.layout.add_notas)
+        editNotaView = findViewById(R.id.edit1)
+        editSubnotaView = findViewById(R.id.edit2)
 
         val button = findViewById<Button>(R.id.button1)
         button.setOnClickListener {
             val replyIntent = Intent()
-            if (TextUtils.isEmpty(editCityView.text)) {
+            if (TextUtils.isEmpty(editNotaView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             }
-            else if (TextUtils.isEmpty(editCountryView.text)) {
+            else if (TextUtils.isEmpty(editSubnotaView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             }
             else {
-                val cityedit1 = editCityView.text.toString()
-                val countryedit1 = editCountryView.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, cityedit1)
-                replyIntent.putExtra(EXTRA1_REPLY, countryedit1)
+                val notaedit1 = editNotaView.text.toString()
+                val subnotaedit1 = editSubnotaView.text.toString()
+                replyIntent.putExtra(EXTRA_REPLY, notaedit1)
+                replyIntent.putExtra(EXTRA1_REPLY, subnotaedit1)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()

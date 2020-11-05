@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Poopie1</string>
-    <string name="city_coiso" translatable="false">Escolhe uma cidade</string>
-    <string name="country_coiso">Escolhe um País</string>
-    <string name="butao_cida_pais">Magia</string>
+    <string name="nota_2" translatable="false">Escreva algo pff</string>
+    <string name="nota_1">Escreva algo</string>
+    <string name="butao_pri">Magia</string>
 </resources>
