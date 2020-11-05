@@ -3,6 +3,8 @@ package com.example.poopie1
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -42,13 +44,12 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == AddCitiesrq && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(AddCities.EXTRA_REPLY)?.let {
-                val cidade = it
-                data?.getStringExtra(AddCities.EXTRA1_REPLY)?.let {
-                    val cities = Cities(city = (cidade), country = (it))
+            val cidade = data?.getStringExtra(AddCities.EXTRA_REPLY).toString()
+            val country = data?.getStringExtra(AddCities.EXTRA1_REPLY).toString()
+
+                    val cities = Cities(city = (cidade), country = (country))
+
                     citiesViewModel.insert(cities)
-                }
-            }
         } else {
             Toast.makeText(
                 applicationContext,
@@ -56,5 +57,4 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG).show()
         }
     }
-
 }

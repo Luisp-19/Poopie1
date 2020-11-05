@@ -24,7 +24,11 @@ class AddCities : AppCompatActivity(){
             val replyIntent = Intent()
             if (TextUtils.isEmpty(editCityView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
-            } else {
+            }
+            else if (TextUtils.isEmpty(editCountryView.text)) {
+                setResult(Activity.RESULT_CANCELED, replyIntent)
+            }
+            else {
                 val cityedit1 = editCityView.text.toString()
                 val countryedit1 = editCountryView.text.toString()
                 replyIntent.putExtra(EXTRA_REPLY, cityedit1)
