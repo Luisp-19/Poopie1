@@ -4,4 +4,5 @@
     <string name="nota_2" translatable="false">Escreva algo pff</string>
     <string name="nota_1">Escreva algo</string>
     <string name="butao_pri">Magia</string>
+    <string name="botao_edit">Editado</string>
 </resources>

@@ -4,12 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <EditText
         android:id="@+id/edit1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nota_2"
-        android:autofillHints="@string/nota_2"
+        android:hint="@string/nota_1"
+        android:autofillHints="@string/nota_1"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
         android:textSize="18sp" />
@@ -18,8 +19,8 @@
         android:id="@+id/edit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nota_1"
-        android:autofillHints="@string/nota_1"
+        android:hint="@string/nota_2"
+        android:autofillHints="@string/nota_2"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
         android:textSize="18sp" />
@@ -30,4 +31,5 @@
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
         android:text="@string/butao_pri" />
+
 </LinearLayout>

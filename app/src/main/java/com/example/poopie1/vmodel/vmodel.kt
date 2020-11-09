@@ -22,11 +22,15 @@ class vmodel(application: Application) : AndroidViewModel(application) {
         allNotas = repository.allNotas
     }
 
-    fun insert(notas: Notas) = viewModelScope.launch(Dispatchers.IO) {
+    fun insert(notas: Notas) = viewModelScope.launch{
         repository.insert(notas)
     }
 
     fun delete(notas: Notas) = viewModelScope.launch(Dispatchers.IO) {
         repository.delete(notas)
+    }
+
+    fun update(notas: Notas)= viewModelScope.launch(Dispatchers.IO){
+        repository.update(notas)
     }
 }

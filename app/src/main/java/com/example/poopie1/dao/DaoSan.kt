@@ -10,8 +10,8 @@ interface DaoSan{
         @Query("SELECT * from nota_table ORDER BY nota ASC")
         fun getAlphabetizedCities(): LiveData<List<Notas>>
 
-        /* @Query("SELECT * from city_table WHERE country == :name")
-         fun getCitiesFromCountry(name: String): LiveData<List> */
+        @Update
+        suspend fun update(notas: Notas)
 
         @Insert(onConflict = OnConflictStrategy.IGNORE)
         suspend fun insert(notas: Notas)

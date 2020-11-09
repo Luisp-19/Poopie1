@@ -8,11 +8,15 @@ class NotasRep(private val daoSan: DaoSan) {
 
     val allNotas: LiveData<List<Notas>> = daoSan.getAlphabetizedCities()
 
-    suspend fun insert(city: Notas){
-        daoSan.insert(city)
+    suspend fun insert(notas: Notas){
+        daoSan.insert(notas)
     }
 
-    suspend fun delete(city: Notas){
-        daoSan.delete(city)
+    suspend fun delete(notas: Notas){
+        daoSan.delete(notas)
+    }
+
+    suspend fun update(notas: Notas) {
+        daoSan.update(notas)
     }
 }
