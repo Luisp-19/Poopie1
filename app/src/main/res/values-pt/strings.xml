@@ -5,4 +5,8 @@
     <string name="nota_1">Escreva algo</string>
     <string name="butao_pri">Magia</string>
     <string name="botao_edit">Editado</string>
+    <string name="Username">Utilizador</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="Shownotes">Mostrar notas</string>
 </resources>

@@ -4,4 +4,8 @@
     <string name="nota_1">Write here</string>
     <string name="butao_pri">Skadoosh</string>
     <string name="botao_edit">EdiTed</string>
+    <string name="Password">Password</string>
+    <string name="Username">Username</string>
+    <string name="Login">Login</string>
+    <string name="Shownotes">Show notes</string>
 </resources>
