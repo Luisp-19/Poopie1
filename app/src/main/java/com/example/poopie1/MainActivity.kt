@@ -99,5 +99,4 @@ class MainActivity : AppCompatActivity(), NotasAdapt.OnItemClickListener {
         Log.d("test", "${notas.id}")
         startActivityForResult(intent, EditNoteRq)
     }
-
 }
